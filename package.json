@@ -1,0 +1,28 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "A note taking app using express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Am0031/note-taker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Am0031/note-taker/issues"
+  },
+  "homepage": "https://github.com/Am0031/note-taker#readme",
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
