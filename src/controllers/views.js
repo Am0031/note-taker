@@ -1,6 +1,6 @@
 const path = require("path");
 
-const renderStartPage = () => {
+const renderStartPage = (req, res) => {
   try {
     //get file path
     //send file as response
@@ -10,7 +10,7 @@ const renderStartPage = () => {
   }
 };
 
-const renderNotesPage = () => {
+const renderNotesPage = (req, res) => {
   try {
     //get file path
     //send file as response
