@@ -6,7 +6,7 @@ const renderStartPage = (req, res) => {
     console.log("time to render the start page");
     //get file path
     //send file as response
-    return res.status(200).json({ message: "will render the start page" });
+    return res.sendFile(path.join(__dirname, "../../public/index.html"));
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
@@ -19,7 +19,8 @@ const renderNotesPage = (req, res) => {
     //get file path
     const notes = getDataFromFile("db");
     //send file as response
-    return res.json({ notes });
+    // return res.json({ notes });
+    return res.sendFile(path.join(__dirname, "../../public/notes.html"));
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
