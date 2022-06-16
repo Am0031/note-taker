@@ -9,6 +9,9 @@ const getNotes = (req, res) => {
     //get file path to data file
     //read from data file
     //send data as response
+    const notes = getDataFromFile("db");
+    //send file as response
+    return res.json({ notes });
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
