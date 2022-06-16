@@ -1,9 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const db = require("../data/db.json");
 
 const getDataFromFile = (fileName) => {
-  //get path and id (or default all)
+  //get path to file
   const filePath = path.join(__dirname, "../data", `${fileName}.json`);
   //read from data file
   const dataFromFile = fs.readFileSync(filePath, "utf8");
@@ -11,9 +10,11 @@ const getDataFromFile = (fileName) => {
   return JSON.parse(dataFromFile);
 };
 
-const writeDataToFile = (filepath, id) => {
-  //receives path
+const writeDataToFile = (fileName, data) => {
+  //get path to file
+  const filePath = path.join(__dirname, "../data", `${fileName}.json`);
   //write data into file
+  fs.writeFileSync(filePath, JSON.stringify(data));
 };
 
 module.exports = { getDataFromFile, writeDataToFile };
