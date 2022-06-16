@@ -1,16 +1,26 @@
-# note-taker
+# Note taker
 
-A note taking app using express.js
+![MIT](https://img.shields.io/badge/License-MIT-blue)
 
-## User Story
+A note taking app using node.js, express.js and a frontend html interface for interaction with the user.
 
-```
-AS A small business owner
-I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-```
+## Table of Content
 
-## Acceptance Criteria
+- [Summary](#summary)
+- [Detailed user story](#detailed-user-story)
+- [Routes](#routes)
+- [File structure](#file-structure)
+- [Contact](#contact)
+
+## Summary
+
+This application allows a user to write and save notes so that they can organise their thoughts and keep track of what they need to do.
+
+Github repo:
+
+Heroku deployed page:
+
+## Detailed User Story
 
 ```
 GIVEN a note-taking application
@@ -28,24 +38,24 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
-## Getting Started
+## File structure
 
-On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module.
+On the back end, the application includes a `db.json` file that is used to store the notes. These are saved and retrieved using the `fs` module.
 
-The following HTML routes should be created:
+The following HTML routes have been created:
 
-- `GET /notes` should return the `notes.html` file.
+- `GET /notes` -> returns the `notes.html` file.
 
-- `GET *` should return the `index.html` file.
+- `GET *` -> returns the `index.html` file.
 
-The following API routes should be created:
+The following API routes have been created:
 
-- `GET /api/notes` should read the `db.json` file and return all saved notes as JSON.
+- `GET /api/notes` -> reads the `db.json` file and returns all saved notes as JSON.
 
-- `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
+- `POST /api/notes` -> receives a new note to save on the request body, adds it to the `db.json` file, and then return the new note to the user. Each note is given a unique id when saved with the use of the uuid module.
 
-## Bonus
+- `DELETE /api/notes/:id` -> receives a query parameter that contains the id of a note to delete, reads all notes from the `db.json` file, removes the note with the given `id` property, and then rewrites the notes to the `db.json` file.
 
-You haven’t learned how to handle DELETE requests, but this application offers that functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
+## Contact
 
-- `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+If you have any questions about this application, feel free to get in touch by sending me an [email](mailto:amelie.pira@gmail.com).
