@@ -43,9 +43,8 @@ const saveNote = (note) =>
   });
 
 const editNote = (note) => {
-  //id can be extracted from the activeNote as info was used to display correct note in title+textarea
-  const activeId = activeNote.id;
-  fetch(`/api/notes/${activeId}`, {
+  //id and data is passed with the currentNote created and passed in
+  fetch(`/api/notes/${note.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -79,14 +78,33 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
-  const newNote = {
-    title: noteTitle.value,
-    text: noteText.value,
-  };
-  saveNote(newNote).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
+  //checks if note is new or already exists in db
+  const currentId = activeNote.id;
+
+  if (currentId) {
+    //creating a note with the current info (the same way a new note gets created and treated)
+    const currentNote = {
+      id: currentId,
+      title: noteTitle.value,
+      text: noteText.value,
+    };
+    //proceed with the editNot function (with same syntax as saveNote function afterwards)
+    editNote(currentNote).then(() => {
+      getAndRenderNotes();
+      //empty the activeNote variable so it goes for else path when it renders it (shows empty)
+      activeNote = {};
+      renderActiveNote();
+    });
+  } else {
+    const newNote = {
+      title: noteTitle.value,
+      text: noteText.value,
+    };
+    saveNote(newNote).then(() => {
+      getAndRenderNotes();
+      renderActiveNote();
+    });
+  }
 };
 
 // Delete the clicked note
