@@ -83,4 +83,4 @@ const editNote = (req, res) => {
   }
 };
 
-module.exports = { getNotes, createNote, deleteNote, getNote, editNote };
+module.exports = { getNotes, createNote, deleteNote, editNote };
