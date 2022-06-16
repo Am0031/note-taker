@@ -60,13 +60,23 @@ const deleteNote = (req, res) => {
 
 const editNote = (req, res) => {
   try {
-    //get file path to data file
-    //read from data file
+    //get data from db
+    const notes = getDataFromFile("db");
+    //get updated data from the user
+    const { title, text } = req.body;
     //get note id
-    //overwrite note with new data
+    const { id } = req.params;
+    //find existing note in notes data
+    const noteIndex = notes.indexOf((note) => note.id === id);
+    //overwrite note with new data - directly into notes file
+    notes[noteIndex].title = title;
+    notes[noteIndex].text = text;
     //write updated data into data file
+    writeDataToFile("db", notes);
     //read from data file (after update)
+    const updatedNotes = getDataFromFile("db");
     //send file as response (updated file)
+    return res.json(updatedNotes);
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
