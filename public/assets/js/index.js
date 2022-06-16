@@ -65,13 +65,13 @@ const renderActiveNote = () => {
   hide(saveNoteBtn);
 
   if (activeNote.id) {
-    noteTitle.setAttribute("readonly", true);
-    noteText.setAttribute("readonly", true);
+    // noteTitle.setAttribute("readonly", true);
+    // noteText.setAttribute("readonly", true);
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
   } else {
-    noteTitle.removeAttribute("readonly");
-    noteText.removeAttribute("readonly");
+    // noteTitle.removeAttribute("readonly");
+    // noteText.removeAttribute("readonly");
     noteTitle.value = "";
     noteText.value = "";
   }
@@ -88,11 +88,11 @@ const handleNoteSave = () => {
       title: noteTitle.value,
       text: noteText.value,
     };
-    //proceed with the editNot function (with same syntax as saveNote function afterwards)
+    //proceed with the editNote function (with same syntax as saveNote function afterwards)
+    //empty the activeNote variable so it goes for else path when it renders it (shows empty)
+    activeNote = {};
     editNote(currentNote).then(() => {
       getAndRenderNotes();
-      //empty the activeNote variable so it goes for else path when it renders it (shows empty)
-      activeNote = {};
       renderActiveNote();
     });
   } else {

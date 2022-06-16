@@ -63,11 +63,11 @@ const editNote = (req, res) => {
     //get data from db
     const notes = getDataFromFile("db");
     //get updated data from the user
-    const { title, text } = req.body;
+    const { id, title, text } = req.body;
     //get note id
-    const { id } = req.params;
+    // const { id } = req.params;
     //find existing note in notes data
-    const noteIndex = notes.indexOf((note) => note.id === id);
+    const noteIndex = notes.findIndex((note) => note.id === id);
     //overwrite note with new data - directly into notes file
     notes[noteIndex].title = title;
     notes[noteIndex].text = text;
