@@ -58,18 +58,6 @@ const deleteNote = (req, res) => {
   }
 };
 
-const getNote = (req, res) => {
-  try {
-    //get file path to data file
-    //get note id
-    //read from data file
-    //send 1 note as response
-  } catch (error) {
-    console.log("[ERROR] : Internal Server error");
-    return res.status(500).json({ message: "internal server error" });
-  }
-};
-
 const editNote = (req, res) => {
   try {
     //get file path to data file
