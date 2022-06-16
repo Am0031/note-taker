@@ -19,7 +19,7 @@ const getNotes = (req, res) => {
 
 const createNote = (req, res) => {
   try {
-    //get file path to data file
+    //get data from db
     const notes = getDataFromFile("db");
     //get data from the user
     const { title, text } = req.body;
@@ -40,13 +40,18 @@ const createNote = (req, res) => {
 
 const deleteNote = (req, res) => {
   try {
-    //get file path to data file
-    //read from data file
+    //get data from db
+    const notes = getDataFromFile("db");
     //get note id
+    const { id } = req.params;
     //extract note from data
+    const filteredNotes = notes.filter((note) => note.id !== id);
     //write updated data into data file
+    writeDataToFile("db", filteredNotes);
     //read from data file (after update)
+    const updatedNotes = getDataFromFile("db");
     //send file as response (updated file)
+    return res.json(updatedNotes);
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });

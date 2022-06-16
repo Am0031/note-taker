@@ -1,13 +1,8 @@
 [
   {
-    "id": "bf6fd79c-ba2a-414f-9749-edbbb3824349",
-    "title": "second note",
-    "text": "second test text"
-  },
-  {
-    "id": "7ca49cff-c80a-46a2-aa09-e54ca9c51df5",
-    "title": "test title",
-    "text": "test text for new note"
+    "id": "4253d4a5-ec8e-4f08-a6d4-8ebe7f202a6f",
+    "title": "Update my laptop",
+    "text": "Need to update my laptop with these software packages:\n- node\n- mysql\n- vscode\n- postman\n- screencastify\n"
   },
   {
     "id": "0d1706e9-f415-4d88-bd3d-12a84598c17a",
