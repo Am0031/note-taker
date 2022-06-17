@@ -5,8 +5,8 @@ const renderStartPage = (req, res) => {
     //send file as response
     return res.sendFile(path.join(__dirname, "../../public/index.html"));
   } catch (error) {
-    console.log("[ERROR] : Internal Server error");
-    return res.status(500).json({ message: "internal server error" });
+    console.log(`${error.message}`);
+    return res.sendFile(path.join(__dirname, "../../public/error.html"));
   }
 };
 
@@ -15,9 +15,14 @@ const renderNotesPage = (req, res) => {
     //send file as response
     return res.sendFile(path.join(__dirname, "../../public/notes.html"));
   } catch (error) {
-    console.log("[ERROR] : Internal Server error");
-    return res.status(500).json({ message: "internal server error" });
+    console.log(`${error.message}`);
+    return res.sendFile(path.join(__dirname, "../../public/error.html"));
   }
 };
 
-module.exports = { renderStartPage, renderNotesPage };
+const renderErrorPage = (req, res) => {
+  //send file as response
+  return res.sendFile(path.join(__dirname, "../../public/error.html"));
+};
+
+module.exports = { renderStartPage, renderNotesPage, renderErrorPage };
