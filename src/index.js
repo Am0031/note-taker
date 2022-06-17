@@ -5,7 +5,7 @@ const path = require("path");
 const routes = require("./routes");
 
 //declare the PORT
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 //create express app instance
 const app = express();
