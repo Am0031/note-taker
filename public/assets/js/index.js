@@ -42,7 +42,7 @@ const saveNote = (note) =>
     body: JSON.stringify(note),
   });
 
-const editNote = (note) => {
+const editNote = (note) =>
   //id and data is passed with the currentNote created and passed in
   fetch(`/api/notes/${note.id}`, {
     method: "PUT",
@@ -51,8 +51,6 @@ const editNote = (note) => {
     },
     body: JSON.stringify(note),
   });
-};
-
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: "DELETE",
