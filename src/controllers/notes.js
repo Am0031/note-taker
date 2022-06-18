@@ -31,7 +31,7 @@ const createNote = (req, res) => {
     //read from data file - is it needed?
     const updatedNotes = getDataFromFile("db");
     //send file as response - is it needed?
-    return res.json(updatedNotes);
+    return res.json(newNote);
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
@@ -51,7 +51,7 @@ const deleteNote = (req, res) => {
     //read from data file (after update)
     const updatedNotes = getDataFromFile("db");
     //send file as response (updated file)
-    return res.json(updatedNotes);
+    return res.json({ message: "Note successfully deleted" });
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
@@ -76,7 +76,7 @@ const editNote = (req, res) => {
     //read from data file (after update)
     const updatedNotes = getDataFromFile("db");
     //send file as response (updated file)
-    return res.json(updatedNotes);
+    return res.json({ message: "Note successfully updated" });
   } catch (error) {
     console.log("[ERROR] : Internal Server error");
     return res.status(500).json({ message: "internal server error" });
