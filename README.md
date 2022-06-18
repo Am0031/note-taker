@@ -76,9 +76,11 @@ See a recap diagram of the routes needed:
 ## File structure
 
 Based on the routes above, the following routes and controllers files are needed to structure our express server:
+
 ![Server](./other/screenshot-server.png)
 
 This structure is then used for our repo:
+
 ![Server](./other/screenshot-repo.png)
 
 ## Installation
