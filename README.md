@@ -10,15 +10,16 @@ A note taking app using node.js, express.js and a frontend html interface for in
 - [Detailed user story](#detailed-user-story)
 - [Routes](#routes)
 - [File structure](#file-structure)
+- [Installation](#installation)
 - [Contact](#contact)
 
 ## Summary
 
 This application allows a user to write and save notes so that they can organise their thoughts and keep track of what they need to do.
 
-Github repo:
+Github repo: [https://github.com/Am0031/note-taker/tree/dev](https://github.com/Am0031/note-taker/tree/dev)
 
-Heroku deployed page:
+Heroku deployed page: [https://peaceful-bastion-97815.herokuapp.com/](https://peaceful-bastion-97815.herokuapp.com/)
 
 ## Detailed User Story
 
@@ -49,7 +50,7 @@ WHEN I click on the Save icon
 THEN the note I have updated is saved and the updated version appears in the left-hand column with the other existing notes
 ```
 
-## File structure
+## Routes
 
 On the back end, the application includes a `db.json` file that is used to store the notes. These are saved and retrieved using the `fs` module.
 
@@ -68,6 +69,52 @@ The following API routes have been created:
 - `PUT /api/notes/:id` -> receives a query parameter that contains the id of a note to update, and the new content of the note, reads from the `db.json` file, finds the corresponding note, updates its content, and sends the updated notes back to the `db.json` file.
 
 - `DELETE /api/notes/:id` -> receives a query parameter that contains the id of a note to delete, reads all notes from the `db.json` file, removes the note with the given `id` property, and then rewrites the notes to the `db.json` file.
+
+See a recap diagram of the routes needed:
+![Routes](./other/screenshot-routes.png)
+
+## File structure
+
+Based on the routes above, the following routes and controllers files are needed to structure our express server:
+![Server](./other/screenshot-server.png)
+
+This structure is then used for our repo:
+![Server](./other/screenshot-repo.png)
+
+## Installation
+
+To try out this application, you can visit this [heroku deployed app page](https://peaceful-bastion-97815.herokuapp.com/).
+
+If you'd like to install this application locally on your machine, you will need to follow these steps for it to then run properly:
+
+Open the CLI and clone the repository, using SSH keys:
+
+```
+git clone git@github.com:Am0031/note-taker.git
+```
+
+Or using HTTPS link:
+
+```
+git clone https://github.com/Am0031/note-taker.git
+```
+
+Go into the new repository and install the required packages:
+
+```
+cd note-taker
+npm install
+```
+
+Once installed, to get this project running, the following command must be entered in the CLI:
+
+```
+npm run start
+```
+
+The following message will then appear: **Server running on http://localhost:4000**
+
+Once the application is started, you can open your browser and travel to the localhost page with the following url: **http://localhost:4000/**
 
 ## Contact
 
