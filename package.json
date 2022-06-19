@@ -4,7 +4,7 @@
   "description": "A note taking app using express.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src.index.js",
+    "dev": "nodemon src/index.js",
     "test": "jest --verbose",
     "start": "node src/index.js"
   },

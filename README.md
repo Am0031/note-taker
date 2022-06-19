@@ -7,6 +7,7 @@ A note taking app using node.js, express.js and a frontend html interface for in
 ## Table of Content
 
 - [Summary](#summary)
+- [Screenshots of the application](#screenshots-of-the-application)
 - [Detailed user story](#detailed-user-story)
 - [Routes](#routes)
 - [File structure](#file-structure)
@@ -20,6 +21,38 @@ This application allows a user to write and save notes so that they can organise
 Github repo: [https://github.com/Am0031/note-taker/tree/dev](https://github.com/Am0031/note-taker/tree/dev)
 
 Heroku deployed page: [https://peaceful-bastion-97815.herokuapp.com/](https://peaceful-bastion-97815.herokuapp.com/)
+
+## Screenshots of the application
+
+See below the different pages and views that theu user will come across when using the app:
+
+<details>
+<summary>Home page</summary>
+
+![Home page](./other/screenshot-home-page.png)
+
+</details>
+
+<details>
+<summary>Notes page - Existing notes on left side and ready to enter new note on right side</summary>
+
+![Home page](./other/screenshot-notes-page1.png)
+
+</details>
+
+<details>
+<summary>Notes page - Existing notes on left side and displaying existing note on right side</summary>
+
+![Home page](./other/screenshot-notes-page2.png)
+
+</details>
+
+<details>
+<summary>Notes page - Existing notes on left side and new/existing note fields ready for saving (save button visible)</summary>
+
+![Home page](./other/screenshot-notes-page3.png)
+
+</details>
 
 ## Detailed User Story
 
